@@ -35,6 +35,12 @@ lib.remove_book(book_1.book_id)
 print('after removal: ', lib.get_size())
 
 print('get books by author:')
+# books = lib.get_books_by_author('Suzanne Collins')
+# print(books)
+# book_2 = Book('23', **books.loc[23])
+# print(book_2.get_age())
+# print(book_2.is_long())
+# print(book_2.summary())
 print(lib.get_books_by_author('Suzanne Collins'))
 
 print('get genre count')
