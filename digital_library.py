@@ -8,7 +8,7 @@ class Book:
         self.title = title
         self.author = author
         self.genre = genre
-        self.published_year = published_year
+        self.published_year = int(published_year)
         self.pages = int(pages)
         self.book_id = book_id
     
@@ -19,7 +19,7 @@ class Book:
         return datetime.datetime.now().year - self.published_year
 
     def summary(self):
-        return f'Book ID {self.book_id}: {self.title} by author has {self.pages} pages. It was first published in {self.published_year} and belongs to the genre {self.genre}.'
+        return f'Book ID {self.book_id}: {self.title} by {self.author} has {self.pages} pages. It was first published in {self.published_year} and belongs to the genre {self.genre}.'
     
 class Library:
     def __init__(self, data):
