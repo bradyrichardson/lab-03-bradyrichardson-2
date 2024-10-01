@@ -62,8 +62,8 @@ class Library:
         # "Book ID book_id: title by author has pages pages. It was first published in published_year and belongs to the genre genre."
         # If the book_id is not in the library, it should return "No matching book in the library."
         if book_id in self.data.index:
-            attrs = **self.data.loc[book_id]
-            book = Book(book_id, attrs.title, attrs.author, attrs.genre, attrs.published_year, attrs.pages)
+            attrs = {**self.data.loc[book_id]}
+            book = Book(book_id, attrs['title'], attrs['author'], attrs['genre'], attrs['published_year'], attrs['pages'])
             return book.summary()
         else:
             return "No matching book in the library."
