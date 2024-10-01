@@ -28,7 +28,7 @@ lib.add_book(book_1)
 print("after add: ", lib.get_size())
 
 print('get book summary')
-print(lib.get_book_summary(book_1.book_id))
+print(lib.get_book_summary(251))
 
 print("before removal: ", lib.get_size())
 lib.remove_book(book_1.book_id)

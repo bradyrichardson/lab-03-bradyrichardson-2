@@ -1,6 +1,6 @@
 ## Import necessary libraries
 import pandas as pd
-
+import datetime
 
 ## Book Class
 class Book:
@@ -16,7 +16,7 @@ class Book:
         return self.pages > 300
 
     def get_age(self):
-        return 2024 - self.published_year
+        return datetime.datetime.now().year - self.published_year
 
     def summary(self):
         return f'Book ID {self.book_id}: {self.title} by author has {self.pages} pages. It was first published in {self.published_year} and belongs to the genre {self.genre}.'
@@ -71,7 +71,8 @@ class Library:
         # Should return a string representing the library.
         # When a Library object is printed, the string "There are size books in the library by authors unique authors.
         # The oldest book in the library is title by author published in published_year." should be output.
-        book_id = self.data['published_year'].idxmax()
+        book_id = self.data['published_year'].idxmin()
+        print(book_id)
         book = self.data.loc[book_id]
         return f"There are {self.size} books in the library by {self.authors} unique authors. The oldest book in the library is {book.title} by {book.author} published in {book.published_year}."
 
