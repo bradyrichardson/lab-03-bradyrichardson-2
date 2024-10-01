@@ -13,7 +13,7 @@ class Book:
         self.book_id = book_id
     
     def is_long(self):
-        return self.pages > 1900
+        return self.pages > 300
 
     def get_age(self):
         return datetime.datetime.now().year - self.published_year
