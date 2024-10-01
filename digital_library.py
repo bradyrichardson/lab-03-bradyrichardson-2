@@ -9,11 +9,11 @@ class Book:
         self.author = author
         self.genre = genre
         self.published_year = published_year
-        self.pages = pages
+        self.pages = int(pages)
         self.book_id = book_id
     
     def is_long(self):
-        return self.pages >= 300
+        return self.pages > 300
 
     def get_age(self):
         return datetime.datetime.now().year - self.published_year
